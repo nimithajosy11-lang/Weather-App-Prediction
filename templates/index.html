@@ -1,0 +1,191 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Weatherly | Weather Dashboard</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+
+        <div class="nav-container">
+
+            <a href="/" class="logo">
+                <span class="logo-icon">☁</span>
+                Weatherly
+            </a>
+
+            <div class="nav-links">
+                <a href="/" class="active">Home</a>
+                <a href="#weather">Weather</a>
+                <a href="#about">About</a>
+            </div>
+
+            <a href="#weather" class="nav-button">
+                Check Weather ↗
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- Main Hero Section -->
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <span class="tag">
+                YOUR PERSONAL WEATHER COMPANION
+            </span>
+
+            <h1>
+                Weather insights,<br>
+                <span>made simple.</span>
+            </h1>
+
+            <p>
+                Stay informed about the weather around you.
+                Get real-time weather updates for any city,
+                all in one place.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- Weather Search Section -->
+    <section class="weather-section" id="weather">
+
+        <div class="search-card">
+
+            <div class="section-heading">
+                <span>WEATHER FORECAST</span>
+                <h2>Check your city's weather</h2>
+                <p>Enter a city name to discover its current weather.</p>
+            </div>
+
+            <form method="POST" class="search-form">
+
+                <div class="input-wrapper">
+                    <span class="search-icon">⌕</span>
+
+                    <input
+                        type="text"
+                        name="city"
+                        placeholder="Enter city name..."
+                        required
+                    >
+                </div>
+
+                <button type="submit">
+                    Get Weather <span>→</span>
+                </button>
+
+            </form>
+
+            {% if error %}
+                <div class="error">
+                    {{ error }}
+                </div>
+            {% endif %}
+
+
+            {% if weather %}
+
+            <!-- Weather Result -->
+            <div class="weather-card">
+
+                <div class="weather-top">
+
+                    <div>
+                        <span class="weather-label">CURRENT WEATHER</span>
+                        <h2>{{ weather.city }}</h2>
+                    </div>
+
+                    <div class="weather-symbol">🌤️</div>
+
+                </div>
+
+                <div class="temperature">
+                    {{ weather.temperature }}<span>°C</span>
+                </div>
+
+                <p class="description">
+                    {{ weather.description }}
+                </p>
+
+                <div class="weather-details">
+
+                    <div class="detail-box">
+                        <span class="detail-icon">💧</span>
+                        <div>
+                            <small>Humidity</small>
+                            <h3>{{ weather.humidity }}%</h3>
+                        </div>
+                    </div>
+
+                    <div class="detail-box">
+                        <span class="detail-icon">🌡️</span>
+                        <div>
+                            <small>Temperature</small>
+                            <h3>{{ weather.temperature }}°C</h3>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            {% endif %}
+
+        </div>
+
+    </section>
+
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+
+        <span class="about-tag">ABOUT WEATHERLY</span>
+
+        <h2>Weather information,<br>without the complexity.</h2>
+
+        <p>
+            Weatherly helps you explore current weather conditions
+            across different cities. Powered by OpenWeatherMap API,
+            it provides simple and accessible weather information
+            whenever you need it.
+        </p>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <div class="footer-content">
+            <h3>☁ Weatherly</h3>
+            <p>Simple weather updates. Smarter everyday planning.</p>
+            <span>© 2026 Weatherly. All rights reserved.</span>
+        </div>
+
+    </footer>
+
+</body>
+</html>
