@@ -47,9 +47,9 @@ git clone https://github.com/nimithajosy11-lang/Weather-App-Prediction.git
 
 ### 2. Navigate to the Project Folder
 
-```bash
-cd Weatherly
-```
+
+cd project nimitha
+
 
 ### 3. Install Required Libraries
 
