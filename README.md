@@ -41,9 +41,9 @@ Weatherly/
 
 ### 1. Clone the Repository
 
-```bash
-git clone YOUR_REPOSITORY_URL
-```
+
+git clone https://github.com/nimithajosy11-lang/Weather-App-Prediction.git
+
 
 ### 2. Navigate to the Project Folder
 
@@ -75,15 +75,14 @@ Keep your API key private. Do not upload it to GitHub.
 
 ### 6. Run the Application
 
-```bash
+
 python app.py
-```
 
 ### 7. Open in Browser
 
-```text
+
 http://127.0.0.1:5000
-```
+
 
 ## 🌐 How It Works
 
